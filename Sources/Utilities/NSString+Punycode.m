@@ -106,8 +106,8 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 @interface NSString (PunycodePrivate)
 
-@property (readonly, copy)	NSDictionary	*URLParts;
-@property (readonly, copy)	NSString		*stringByDeletingVariationSelectors;
+@property (readonly, copy)	NSDictionary<NSString *, NSString *>	*URLParts;
+@property (readonly, copy)	NSString								*stringByDeletingVariationSelectors;
 
 @end
 
@@ -557,9 +557,9 @@ static UIDNA *uidnaEncoder() {
 }
 
 + (instancetype)URLWithUnicodeString:(NSString *)URLString relativeToURL:(NSURL *)baseURL {
-	NSDictionary *parts = URLString.URLParts;
+	NSDictionary<NSString *, NSString *> *parts = URLString.URLParts;
 
-	if (parts[@"scheme"]) {
+	if (parts[@"scheme"].length != 0) {
 		URLString = URLString.encodedURLString;
 	}
 
