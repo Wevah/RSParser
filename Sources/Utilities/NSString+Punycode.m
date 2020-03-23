@@ -556,4 +556,14 @@ static UIDNA *uidnaEncoder() {
 #endif
 }
 
++ (instancetype)URLWithUnicodeString:(NSString *)URLString relativeToURL:(NSURL *)baseURL {
+	NSDictionary *parts = URLString.URLParts;
+
+	if (parts[@"scheme"]) {
+		URLString = URLString.encodedURLString;
+	}
+
+	return [self URLWithString:URLString relativeToURL:baseURL];
+}
+
 @end

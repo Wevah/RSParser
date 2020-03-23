@@ -9,6 +9,7 @@
 #import <RSParser/RSHTMLMetadata.h>
 #import <RSParser/RSParserInternal.h>
 #import <RSParser/RSHTMLTag.h>
+#import "NSString+Punycode.h"
 
 static NSString *urlStringFromDictionary(NSDictionary *d);
 static NSString *absoluteURLStringWithRelativeURLString(NSString *relativeURLString, NSString *baseURLString);
@@ -210,12 +211,12 @@ static NSString *urlStringFromDictionary(NSDictionary *d) {
 
 static NSString *absoluteURLStringWithRelativeURLString(NSString *relativeURLString, NSString *baseURLString) {
 
-	NSURL *url = [NSURL URLWithString:baseURLString];
+	NSURL *url = [NSURL URLWithString:baseURLString.encodedURLString];
 	if (!url) {
 		return nil;
 	}
 
-	NSURL *absoluteURL = [NSURL URLWithString:relativeURLString relativeToURL:url];
+	NSURL *absoluteURL = [NSURL URLWithUnicodeString:relativeURLString relativeToURL:url];
 	return absoluteURL.absoluteURL.standardizedURL.absoluteString;
 }
 
