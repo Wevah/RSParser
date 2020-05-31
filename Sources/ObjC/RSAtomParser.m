@@ -267,9 +267,8 @@ static const NSInteger kLengthLength = 7;
 
 - (void)addFeedLanguage {
 
-	if (self.language.length < 0) {
-		self.language = self.currentAttributes[kXMLLangKey]
-;
+	if (self.language.length < 1) {
+		self.language = self.currentAttributes[kXMLLangKey];
 	}
 }
 
