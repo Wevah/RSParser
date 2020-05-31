@@ -13,7 +13,7 @@
 
 @implementation RSOPMLFeedSpecifier
 
-- (instancetype)initWithTitle:(NSString *)title feedDescription:(NSString *)feedDescription homePageURL:(NSString *)homePageURL feedURL:(NSString *)feedURL {
+- (instancetype)initWithTitle:(NSString *)title feedDescription:(NSString *)feedDescription homePageURL:(NSString *)homePageURL feedURL:(NSString *)feedURL language:(NSString *)language {
 
 	NSParameterAssert(!RSParserStringIsEmpty(feedURL));
 	
@@ -41,6 +41,13 @@
 	}
 	else {
 		_homePageURL = homePageURL;
+	}
+
+	if (RSParserStringIsEmpty(language)) {
+		_language = nil;
+	}
+	else {
+		_language = language;
 	}
 
 	_feedURL = feedURL;

@@ -12,12 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSOPMLFeedSpecifier : NSObject
 
-- (instancetype)initWithTitle:(NSString * _Nullable)title feedDescription:(NSString * _Nullable)feedDescription homePageURL:(NSString * _Nullable)homePageURL feedURL:(NSString *)feedURL;
+- (instancetype)initWithTitle:(NSString * _Nullable)title feedDescription:(NSString * _Nullable)feedDescription homePageURL:(NSString * _Nullable)homePageURL feedURL:(NSString *)feedURL language:(NSString * _Nullable)language;
 
 @property (nonatomic, nullable, readonly) NSString *title;
 @property (nonatomic, nullable, readonly) NSString *feedDescription;
 @property (nonatomic, nullable, readonly) NSString *homePageURL;
 @property (nonatomic, readonly) NSString *feedURL;
+@property (nonatomic, nullable, readonly) NSString *language;
 
 @end
 

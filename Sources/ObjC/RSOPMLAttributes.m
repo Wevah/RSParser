@@ -19,6 +19,7 @@ NSString *OPMLTypeKey = @"type";
 NSString *OPMLVersionKey = @"version";
 NSString *OPMLHMTLURLKey = @"htmlUrl";
 NSString *OPMLXMLURLKey = @"xmlUrl";
+NSString *OPMLLanguageKey = @"language";
 
 
 @implementation NSDictionary (RSOPMLAttributes)
@@ -64,5 +65,9 @@ NSString *OPMLXMLURLKey = @"xmlUrl";
 	return [self rsparser_objectForCaseInsensitiveKey:OPMLXMLURLKey];
 }
 
+- (NSString *)opml_language {
+
+	return [self rsparser_objectForCaseInsensitiveKey:OPMLLanguageKey];
+}
 
 @end

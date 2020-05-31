@@ -18,6 +18,7 @@ extern NSString *OPMLTypeKey; //type
 extern NSString *OPMLVersionKey; //version
 extern NSString *OPMLHMTLURLKey; //htmlUrl
 extern NSString *OPMLXMLURLKey; //xmlUrl
+extern NSString *OPMLLanguageKey; //language
 
 
 @interface NSDictionary (RSOPMLAttributes)
@@ -32,5 +33,6 @@ extern NSString *OPMLXMLURLKey; //xmlUrl
 @property (nonatomic, readonly) NSString *opml_version;
 @property (nonatomic, readonly) NSString *opml_htmlUrl;
 @property (nonatomic, readonly) NSString *opml_xmlUrl;
+@property (nonatomic, readonly) NSString *opml_language;
 
 @end
